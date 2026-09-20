@@ -1,0 +1,63 @@
+================================================================================
+K4-L3B BENCHMARK RETRIEVAL REPORT
+Chiến lược: HeadingChunker (Chia theo Tiêu đề / Section + Header Inheritance)
+Mô hình nhúng (Embedder): mock embeddings fallback
+Số lượng chunk đã nạp vào Vector Store: 107 chunks
+================================================================================
+
+Query 1: Quy định về kích thước và trọng lượng tối đa của kiện hàng đối với dịch vụ SPX Instant là bao nhiêu?
+Câu trả lời chuẩn (Gold): Dài <= 60 cm, Rộng <= 60 cm, Cao <= 60 cm; Trọng lượng tối đa <= 30kg sau khi đóng gói.
+Điểm đánh giá câu này: 0/2 đ
+Top-3 Chunks tìm thấy:
+  [1] Score: 0.2822 | Doc: shopee-chinh-sach-van-chuyen | Preview: B. QUY ĐỊNH VỀ HÀNG HÓA KHÔNG HỖ TRỢ VẬN CHUYỂN, VẬN CHUYỂN CÓ ĐIỀU KIỆN    iv. Shopee có thể vẫn hỗ trợ nếu c...
+  [2] Score: 0.2330 | Doc: shopee-chinh-sach-van-chuyen | Preview: D. QUY ĐỊNH VỀ KHIẾU NẠI VÀ BỒI THƯỜNG    b.    Lưu ý: Đối với các đơn hàng được vận chuyển theo quy định của ...
+  [3] Score: 0.2066 | Doc: shopee-chinh-sach-van-chuyen | Preview: C.  QUY ĐỊNH VỀ ĐÓNG GÓI HÀNG HÓA Xem chi tiết Quy định đóng gói TẠI ĐÂY.  Shopee có quyền sửa đổi các quy địn...
+--------------------------------------------------------------------------------
+Query 2: Người mua cần lưu ý gì khi đóng gói hàng hóa hoàn trả có chứa chất lỏng hoặc dễ vỡ?
+Câu trả lời chuẩn (Gold): Đóng chặt nắp chai, cho vào thùng vừa với kích cỡ, sử dụng vật liệu đệm (bong bóng, màng co, xốp) để giảm va đập và luôn ghi hình lại quá trình đóng gói.
+Điểm đánh giá câu này: 0/2 đ
+Top-3 Chunks tìm thấy:
+  [1] Score: 0.3402 | Doc: shopee-chinh-sach-van-chuyen | Preview: C.  QUY ĐỊNH VỀ ĐÓNG GÓI HÀNG HÓA    d.    Trên bao bì tất cả các bưu kiện đều phải có thông tin và Người Bán ...
+  [2] Score: 0.2742 | Doc: shopee-chinh-sach-van-chuyen | Preview: D. QUY ĐỊNH VỀ KHIẾU NẠI VÀ BỒI THƯỜNG - Ngoại quan 06 mặt, tình trạng sản phẩm bên trong và chi tiết thể hiện...
+  [3] Score: 0.2621 | Doc: shopee-chinh-sach-van-chuyen | Preview: D. QUY ĐỊNH VỀ KHIẾU NẠI VÀ BỒI THƯỜNG    ii. Đơn được cập nhật trạng thái chuyển hoàn không thành công: Đơn s...
+--------------------------------------------------------------------------------
+Query 3: Người bán cần làm gì khi đơn vị vận chuyển hoàn trả hàng về kho thành công và hàng còn nguyên vẹn?
+Câu trả lời chuẩn (Gold): Tại mục Trả hàng thành công, chọn Xác nhận Nhận hàng -> chọn 'Nhập lại hàng vào kho' -> nhập số lượng thực tế và nhấn 'Nhập tồn kho nhanh'.
+Điểm đánh giá câu này: 0/2 đ
+Top-3 Chunks tìm thấy:
+  [1] Score: 0.3047 | Doc: shopee-dong-goi-don-hoan-tra | Preview: # [Trả hàng/Hoàn tiền] Cách đóng gói đơn hàng hoàn trả Bạn cần đóng gói và quay video quá trình đóng gói sản p...
+  [2] Score: 0.2524 | Doc: shopee-seller-don-giao-khong-thanh-cong | Preview: B. Trường hợp nếu đơn thất thoát hoặc hư hỏng không nhập lại được Để tìm chính xác giao dịch cần bấm hoàn tất,...
+  [3] Score: 0.2428 | Doc: shopee-dong-goi-don-hoan-tra | Preview: # [Trả hàng/Hoàn tiền] Cách đóng gói đơn hàng hoàn trả  [Trả hàng/ Hoàn tiền] Cách đóng gói đơn hàng hoàn trả ...
+--------------------------------------------------------------------------------
+Query 4: Giá trị đơn hàng tối đa áp dụng cho phương thức thanh toán COD khi sử dụng dịch vụ SPX Instant là bao nhiêu?
+Câu trả lời chuẩn (Gold): Giá trị đơn hàng tối đa đối với phương thức thanh toán COD là 5.000.000Đ (các phương thức khác là 10.000.000Đ).
+Điểm đánh giá câu này: 0/2 đ
+Top-3 Chunks tìm thấy:
+  [1] Score: 0.3298 | Doc: shopee-dong-goi-don-hoan-tra | Preview: # [Trả hàng/Hoàn tiền] Cách đóng gói đơn hàng hoàn trả Mã vận đơn: Vào ứng dụng Shopee > Mục Tôi > Trả hàng/ h...
+  [2] Score: 0.2541 | Doc: shopee-cam-nang-tra-hang-hoan-tien | Preview: # [Trả hàng/Hoàn tiền] Cẩm nang Trả hàng hoàn tiền  [Trả hàng/Hoàn tiền] Cẩm nang Trả hàng hoàn tiền | Shopee ...
+  [3] Score: 0.2076 | Doc: shopee-chinh-sach-van-chuyen | Preview: B. QUY ĐỊNH VỀ HÀNG HÓA KHÔNG HỖ TRỢ VẬN CHUYỂN, VẬN CHUYỂN CÓ ĐIỀU KIỆN    i. Để đảm bảo duy trì chất lượng s...
+--------------------------------------------------------------------------------
+Query 5: Quy trình xử lý đơn trả hàng và quản lý hàng hoàn trả tại Kênh Quản Lý Shop được thực hiện như thế nào?
+Câu trả lời chuẩn (Gold): Người bán theo dõi trạng thái tại Kênh Quản Lý Shop. Nếu hàng nguyên vẹn thì chọn Nhập lại hàng vào kho; nếu hàng thất lạc/hư hỏng thì chọn Thêm chi phí để được Shopee đền bù.
+Metadata filter áp dụng: {'audience': 'seller'}
+Điểm đánh giá câu này: 1/2 đ
+Top-3 Chunks tìm thấy:
+  [1] Score: 0.1613 | Doc: shopee-seller-don-giao-khong-thanh-cong | Preview: # Quản lý đơn hàng giao không thành công  Quản lý đơn hàng giao không thành công | Shopee Trung tâm trợ giúp  ...
+  [2] Score: 0.1554 | Doc: shopee-seller-quan-ly-don-tra-hang | Preview: C. Hướng dẫn Phản hồi đến Shopee khi chưa nhận được hàng hoàn hoặc hàng hoàn gặp vấn đề Tại mục Nhật ký giao d...
+  [3] Score: 0.0968 | Doc: shopee-seller-quan-ly-don-tra-hang | Preview: # Quản lý đơn trả hàng hoàn tiền  Quản lý đơn trả hàng hoàn tiền | Shopee Trung tâm trợ giúp  Xin chào, Shopee...
+--------------------------------------------------------------------------------
+
+=== THỬ NGHIỆM A/B: HIỆU QUẢ CỦA METADATA FILTERING TRÊN QUERY 5 ===
+Query: Quy trình xử lý đơn trả hàng và quản lý hàng hoàn trả tại Kênh Quản Lý Shop được thực hiện như thế nào?
+1. Khi KHÔNG dùng filter:
+   [1] Doc: shopee-cam-nang-tra-hang-hoan-tien (audience: buyer)
+   [2] Doc: shopee-bang-chung-tra-hang (audience: buyer)
+   [3] Doc: ecom-shopee-co-check (audience: buyer)
+2. Khi CÓ filter {'audience': 'seller'}:
+   [1] Doc: shopee-seller-don-giao-khong-thanh-cong (audience: seller)
+   [2] Doc: shopee-seller-quan-ly-don-tra-hang (audience: seller)
+   [3] Doc: shopee-seller-quan-ly-don-tra-hang (audience: seller)
+
+================================================================================
+TỔNG KẾT ĐIỂM TRUY XUẤT (RETRIEVAL QUALITY): 1 / 10
+================================================================================

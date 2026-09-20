@@ -1,2 +1,7 @@
 url,doc_id,title,audience,category,language,document_version,license_or_permission
-https://example.com/policy/returns,return-refund-deadline,Thời hạn đổi trả và hoàn tiền,buyer,returns-policy,vi,not-stated,public-source
+https://tiki.vn/doi-tra-de-dang,ecom_tiki_return_policy,Chính sách đổi trả Tiki,customer,policy,vi,2024,public_terms
+https://ghn.vn/blogs/huong-dan/quy-dinh-ve-kich-thuoc-khoi-luong-va-cach-dong-goi-hang-hoa-tai-ghn,ecom_ghn_packaging_guide,Quy định đóng gói GHN,merchant,guideline,vi,2024,public_blog
+https://help.shopee.vn/portal/4/article/79262,ecom_shopee_co_check,Chính sách đồng kiểm Shopee,customer,help,vi,2024,public_help
+https://www.sapo.vn/dieu-khoan-su-dung.html,ecom_sapo_terms,Điều khoản dịch vụ Sapo,merchant,legal,vi,2024,public_terms
+https://www.sendo.vn/quy-che-hoat-dong,ecom_sendo_operation_rules,Quy chế hoạt động Sendo,general,legal,vi,2024,public_terms
+https://fptshop.com.vn/ho-tro/chinh-sach-giao-hang,ecom_fptshop_shipping,Chính sách giao hàng FPT Shop,customer,policy,vi,2024,public_terms
