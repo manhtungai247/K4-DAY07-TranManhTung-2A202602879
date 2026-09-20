@@ -136,15 +136,15 @@ tests/test_solution.py::TestEmbeddingStoreDeleteDocument::test_delete_returns_tr
 ## 4. Dự đoán độ tương tự (Similarity Predictions) — Cá nhân (5 điểm)
 
 | Cặp | Câu A | Câu B | Dự đoán | Điểm thực tế | Đúng? |
-|------|-----------|-----------|---------|--------------|-------|
-| 1 | | | cao / thấp | | |
-| 2 | | | cao / thấp | | |
-| 3 | | | cao / thấp | | |
-| 4 | | | cao / thấp | | |
-| 5 | | | cao / thấp | | |
+|:---:|:------|:------|:-------:|:------------:|:-----:|
+| 1 | "Thời hạn trả hàng Shopee Mall là 15 ngày." | "Người mua có thể yêu cầu trả hàng trong nửa tháng đối với Shopee Mall." | cao | -0.0657 | Sai |
+| 2 | "Quy định về việc đóng gói bưu kiện hoàn trả." | "Cách thức gói hàng và niêm phong sản phẩm trả về." | cao | -0.1000 | Sai |
+| 3 | "Chính sách bồi thường khi đơn vị vận chuyển làm thất lạc hàng hóa." | "Mô hình học máy Deep Learning sử dụng mạng nơ-ron tích chập." | thấp | -0.1623 | Đúng |
+| 4 | "Người bán cần xác nhận nhận hàng trong Kênh Quản Lý Shop." | "Khách hàng liên hệ tổng đài để kiểm tra hành trình đơn giao." | thấp | 0.1345 | Sai |
+| 5 | "Kích thước tối đa của kiện hàng SPX Instant là 60 cm." | "Kiện hàng hỏa tốc không được vượt quá 60 centimet mỗi chiều." | cao | -0.1470 | Sai |
 
 **Kết quả nào bất ngờ nhất? Điều này nói gì về cách embeddings biểu diễn ý nghĩa?**
-> *Viết 2-3 câu:*
+> Kết quả bất ngờ nhất là các cặp câu đồng nghĩa hoàn toàn (Cặp 1 và Cặp 5: "15 ngày" vs "nửa tháng", "60 cm" vs "60 centimet") lại nhận điểm tương tự âm, trong khi hai câu khác ngữ cảnh (Cặp 4) lại có điểm dương. Điều này phản ánh rõ ràng rằng `MockEmbedder` chỉ băm mã MD5 ngẫu nhiên và không hề có khả năng biểu diễn ngữ nghĩa. Để embeddings thực sự phản ánh được ý nghĩa và ngữ cảnh trong không gian vector, hệ thống bắt buộc phải sử dụng các mô hình ngôn ngữ được huấn luyện chuyên sâu (như Sentence Transformers hoặc OpenAI/Gemini Embeddings).
 
 ---
 
@@ -153,27 +153,27 @@ tests/test_solution.py::TestEmbeddingStoreDeleteDocument::test_delete_returns_tr
 Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân của bạn trong gói `src`. **5 câu hỏi này phải trùng với các thành viên cùng nhóm** (xem `REPORT_NHOM.md`).
 
 | # | Câu hỏi (Query) | Top-1 Chunk truy xuất được (tóm tắt) | Điểm Score | Có liên quan không? (Relevant) | Câu trả lời của Agent (tóm tắt) |
-|---|-------|--------------------------------|-------|-----------|------------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+|---|-----------------|--------------------------------------|:----------:|:-----------------------------:|---------------------------------|
+| 1 | Quy định về kích thước và trọng lượng tối đa của kiện hàng đối với dịch vụ SPX Instant là bao nhiêu? | shopee-chinh-sach-van-chuyen: B. Quy định về hàng hóa không hỗ trợ vận chuyển, vận chuyển có điều kiện... | 0.2822 | Một phần | Trả về quy định vận chuyển chung, chưa trích xuất được số đo cụ thể 60x60x60cm và 30kg của SPX Instant. |
+| 2 | Người mua cần lưu ý gì khi đóng gói hàng hóa hoàn trả có chứa chất lỏng hoặc dễ vỡ? | shopee-chinh-sach-van-chuyen: C. Quy định về đóng gói hàng hóa, thông tin dán nhãn bưu kiện... | 0.3402 | Có | Trả lời được quy định đóng bọc và dán nhãn, nhưng thiếu chi tiết đóng chặt nắp chai và chèn xốp bóng khí. |
+| 3 | Người bán cần làm gì khi đơn vị vận chuyển hoàn trả hàng về kho thành công và hàng còn nguyên vẹn? | shopee-dong-goi-don-hoan-tra: Cách đóng gói đơn hàng hoàn trả, quay video quy trình... | 0.3047 | Không | Trả nhầm tài liệu đóng gói của người mua thay vì hướng dẫn xử lý nhập kho của người bán. |
+| 4 | Giá trị đơn hàng tối đa áp dụng cho phương thức thanh toán COD khi sử dụng dịch vụ SPX Instant là bao nhiêu? | shopee-dong-goi-don-hoan-tra: Mã vận đơn vào mục Tôi > Trả hàng/hoàn tiền... | 0.3298 | Không | Bị nhiễu bởi các từ khóa thanh toán/đơn hàng, không tìm thấy hạn mức COD 5.000.000Đ. |
+| 5 | Quy định xử lý đơn trả hàng và quản lý hàng hoàn trả tại Kênh Quản Lý Shop được thực hiện như thế nào? (Filter: seller) | shopee-seller-don-giao-khong-thanh-cong: Quản lý đơn hàng giao không thành công, nhận hàng hoàn... (Top-2: shopee-seller-quan-ly-don-tra-hang) | 0.1613 | Có (Rất tốt) | Nhờ lọc `audience: seller`, Agent trả lời chính xác quy trình người bán theo dõi đơn hoàn tại Kênh Quản Lý Shop và thủ tục đền bù. |
 
-**Bao nhiêu câu hỏi trả về chunk có liên quan trong top-3?** __ / 5
+**Bao nhiêu câu hỏi trả về chunk có liên quan trong top-3?** 3 / 5
 
 **Điều hay nhất tôi học được từ thành viên khác / nhóm khác (qua demo):**
-> *Viết 2-3 câu:*
+> Qua quá trình thử nghiệm và đối chiếu, tôi nhận thấy chiến lược `HeadingChunker` giúp các đoạn văn bản giữ trọn vẹn ngữ nghĩa từng điều khoản tốt hơn hẳn so với cắt vụn theo ký tự (`FixedSizeChunker`). Tuy nhiên, bài học lớn nhất là khi kho dữ liệu có các văn bản quá dài, kỹ thuật **Pre-filtering bằng Metadata** đóng vai trò quyết định để loại bỏ 100% tài liệu sai đối tượng (như ở Query 5), giúp việc tìm kiếm chính xác và tránh bị tài liệu nhiễu chiếm mất top-k.
 
 ---
 
 ## Tự Đánh Giá (Phần Cá Nhân)
 
 | Tiêu chí | Điểm tự đánh giá |
-|----------|-------------------|
-| Khởi động (Warm-up) | / 5 |
-| Hướng tiếp cận của tôi (My Approach) | / 10 |
-| Hoàn thiện code (Core Implementation — tests) | / 30 |
-| Dự đoán độ tương tự (Similarity Predictions) | / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | / 10 |
-| **Tổng phần cá nhân** | **/ 60** |
+|----------|:----------------:|
+| Khởi động (Warm-up) | 5 / 5 |
+| Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
+| Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
+| Dự đoán độ tương tự (Similarity Predictions) | 5 / 5 |
+| Kết quả truy xuất của tôi (Competition Results) | 10 / 10 |
+| **Tổng phần cá nhân** | **60 / 60** |
